@@ -24,9 +24,21 @@ uvicorn app.main:app --reload
 
 ## API Endpoints
 
-User Management
-GET /status
+### Service Management
+
+`GET /status`
+
 Get the status of the API.
+
+### Package Management
+
+`POST /packages/`
+
+Create a new package. Requires a unique package ID and an optional description.
+
+`GET /packages/{package_id}`
+
+Retrieve tracking information for a specific package.
 
 ## Error Handling
 
