@@ -22,13 +22,25 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
+## Authentication
+
+The API uses OAuth2 with JWT tokens for authentication. Obtain a token using the /token endpoint and include it in the Authorization header as Bearer `<token>` for authenticated requests.
+
 ## API Endpoints
 
-### Service Management
+### System Management
 
 `GET /status`
 
 Get the status of the API.
+
+### User Management
+
+`POST /token`
+Obtain an access token.
+
+`GET /users/me`
+Retrieve the current user's details.
 
 ### Package Management
 
