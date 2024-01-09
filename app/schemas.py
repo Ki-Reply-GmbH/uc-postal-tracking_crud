@@ -2,15 +2,12 @@ from pydantic import BaseModel
 from datetime import datetime
 from typing import Optional
 
-
 class PackageBase(BaseModel):
     id: str
     description: Optional[str] = None
 
-
 class PackageCreate(PackageBase):
     pass
-
 
 class Package(PackageBase):
     status: str
@@ -18,3 +15,19 @@ class Package(PackageBase):
 
     class Config:
         orm_mode = True
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+class TokenRequestForm(BaseModel):
+    username: str
+    password: str
+
+class User(BaseModel):
+    username: str
+
+    class Config:
+        orm_mode = True
+
+# Additional schemas can be added here
